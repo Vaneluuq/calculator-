@@ -119,6 +119,7 @@ const Calculator = () => {
               <small>De tu ingreso destinas el {variablePorcentage}% por concepto de otros gastos variables. </small>
               <h4> Tengo un total de gasto variable de: ${sumVariableExp} al mes. </h4>
           </div>
+          <button type="submit">Guardar mi presupuesto</button>
       </form>
       <div className={stylesComponents.divValues}>
         <h3>La diferencia entre de mis ingresos y mis gastos es de: ${total} correspondiente al {sumt()}% total de mis ingresos</h3>
