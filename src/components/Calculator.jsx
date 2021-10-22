@@ -42,13 +42,23 @@ const Calculator = () => {
    const creditPorcentages = percentage(data.credit, totalIncome);
    const totalExpenses = sumTotal(data.rent, data.fuel, data.services, data.credit);
 
+ 
+
    // Total variable expenses
    const sumVariableExp = sum(data.travels, data.othersExpensesVariables)
    const variablePorcentage = percentage(sumVariableExp, totalIncome)
 
    // totales
    const total = totalIncome - (totalExpenses + sumVariableExp)
-   const percentageTotal = 100 - (rentPorcentage + fuelPorcentage + servicesPorcentage + creditPorcentages + variablePorcentage)
+   const sumt = () => {
+    const percentageTotal = 100 - (rentPorcentage + fuelPorcentage + servicesPorcentage + creditPorcentages + variablePorcentage)
+    if(percentageTotal !== 0){
+        return percentageTotal
+    }else{
+        return 0
+    }
+   };
+
 
 
    // data chart
@@ -74,14 +84,14 @@ const Calculator = () => {
     return (
       <div className={stylesComponents.container}>
        <h2>Hagamos tu presupuesto mensual</h2>
-       <p>**VA te apoya es por eso que te compartimos una base para que hagas tu presupuesto mensual y no sufras de un estres financiero al finalizar del mes.</p>
+       <p>**VA te apoya es por eso que te compartimos una base para que hagas tu presupuesto mensual. <br /> Llena y/ o modifica los siguientes campos para establecer tu presupuesto mensual.</p>
        <form action="#" onSubmit={handleSubmit}>
          <div className={stylesComponents.divValues}>
            <h2>Ingresos</h2>
               <label htmlFor="">Mi sueldo Neto es:</label>
               <input type="number" name="income" onChange={handleInputChange}/>
               <label htmlFor="">Otros Ingresos</label>
-              <input type="number" name="otherIncome" onChange={handleInputChange}/>
+              <input type="number" name="otherIncome" onChange={handleInputChange} placeholder = "Ej. Rentas, ventas en linea, freelance "/>
               <h4> Tengo un ingreso total de: ${totalIncome} en el mes</h4>
           </div>
           <div className={stylesComponents.divValues}>
@@ -105,13 +115,13 @@ const Calculator = () => {
               <label htmlFor="">Viajes</label>
               <input type="number" name="travels" onChange={handleInputChange}/>
               <label htmlFor="">Otros gastos</label>
-              <input type="number" name="othersExpensesVariables" onChange={handleInputChange}/>
+              <input type="number" name="othersExpensesVariables" onChange={handleInputChange} placeholder= "Ej. Mascostas, ropa, belleza "/>
               <small>De tu ingreso destinas el {variablePorcentage}% por concepto de otros gastos variables. </small>
               <h4> Tengo un total de gasto variable de: ${sumVariableExp} al mes. </h4>
           </div>
       </form>
       <div className={stylesComponents.divValues}>
-        <h3>La diferencia entre de mis ingresos y mis gastos es de: ${total} correspondiente al {percentageTotal}% total de mis ingresos</h3>
+        <h3>La diferencia entre de mis ingresos y mis gastos es de: ${total} correspondiente al {sumt()}% total de mis ingresos</h3>
            <PolarChart data={dataChart}/> 
       </div>
     </div>

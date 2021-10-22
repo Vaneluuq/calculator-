@@ -30,7 +30,7 @@ const polarChart = ({data}) => (
     <div className={stylesComponents.text}>
       <small>El grafico te muestra en porcentaje tus gastos con relacion a tus ingresos.</small>
 
-      <h4>si quieres manejar de formas mas responsable tus ingresos **VA pone a tus disposición un a <span> <a href="https://www.bbva.mx/personas/productos/ahorro/meta-ahorro.html">producto que te ayudará a ahorrar</a></span> a corto, mediano o largo plazo, dependiendo tus necesidades.</h4>
+      <h4>Si quieres manejar de forma más responsable tus ingresos **VA pone a tu disposición un <span> <a href="https://www.bbva.mx/personas/productos/ahorro/meta-ahorro.html">producto que te ayudará a ahorrar</a></span> a corto, mediano o largo plazo, dependiendo tus necesidades.</h4>
 
     </div>
   </>
