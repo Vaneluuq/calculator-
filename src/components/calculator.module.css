@@ -1,0 +1,58 @@
+.container{
+    width: 100%;
+    height: 100vh;
+}
+.container p{
+    margin: 1em;
+}
+
+.container h2, h4, p, label, small{
+    margin-left: 5%;
+}
+
+.container h3 {
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+    background: #028484;
+    color: white;
+    padding: 1em;
+}
+
+.divValues {
+    display: flex;
+    flex-direction: column;
+    color: #121212;
+    font-weight: bolder;
+}
+.divValues span {
+    margin-left: auto;
+    margin-right: auto; 
+    display: flex;
+    
+}
+
+.divValues input {
+    width: 90%;
+    height: 2em;
+    border: none;
+    background-color: #f4f4f4;
+    border-bottom: #777f86 solid 0.1em;
+    font-size: 1.3em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.divValues small {
+    margin-bottom: 1em;
+
+}
+
+.header {
+    text-align: center;
+}
+
+.text {
+    margin: 1em;
+}
